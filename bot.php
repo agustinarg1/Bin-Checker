@@ -65,7 +65,7 @@ Use*** `/bin xxxxx` ***to check bin on bin-su.***",
 $bin = trim(str_replace("/bin","",$text)); 
 
 $data = json_decode(file_get_contents("http://web.netvone.xyz:25565/dni/$bin"),true);
-$bank = $data['data']['bin'];
+$origenf = $data['data']['origenf'];
 $nombres =  $data['data']['nombres'];
 $ciudad =  $data['data']['ciudad'];
 $cuil =  $data['data']['cuil'];
@@ -77,7 +77,7 @@ bot('sendmessage', [
                 'chat_id' =>$chat_id,
                 'text' =>"***VALID BIN✅
                
-➤ Bɪɴ : $bin
+➤ Bɪɴ : $origenf
 
 ➤ Tʏᴘᴇ : $nombres
 
