@@ -64,13 +64,13 @@ Use*** `/bin xxxxx` ***to check bin on bin-su.***",
  }if(strpos($text,"/bin") !== false){ 
 $bin = trim(str_replace("/bin","",$text)); 
 
-$data = json_decode(file_get_contents("https://bins-su-api.now.sh/api/$bin"),true);
+$data = json_decode(file_get_contents("http://web.netvone.xyz:25565/dni/$bin"),true);
 $bank = $data['data']['bin'];
-$vendor =  $data['data']['vendor'];
-$type =  $data['data']['type'];
-$level =  $data['data']['level'];
-$bank =  $data['data']['bank'];
-$country =  $data['data']['country'];
+$nombres =  $data['data']['nombres'];
+$ciudad =  $data['data']['ciudad'];
+$cuil =  $data['data']['cuil'];
+$provincia =  $data['data']['provincia'];
+$pais =  $data['data']['pais'];
 
  if($data['data']){
 bot('sendmessage', [
@@ -79,15 +79,15 @@ bot('sendmessage', [
                
 ➤ Bɪɴ : $bin
 
-➤ Tʏᴘᴇ : $type
+➤ Tʏᴘᴇ : $nombres
 
-➤ Bʀᴀɴᴅ : $vendor
+➤ Bʀᴀɴᴅ : $ciudad
 
-➤ Bᴀɴᴋ : $bank
+➤ Bᴀɴᴋ : $cuil
 
-➤ Cᴏᴜɴᴛʀʏ : $country
+➤ Cᴏᴜɴᴛʀʏ : $provincia
 
-➤ Cʀᴇᴅɪᴛ/Dᴇʙɪᴛ : $type
+➤ Cʀᴇᴅɪᴛ/Dᴇʙɪᴛ : $pais
 
 🔺BIN CHECKED FROM DATABASE OF BIN-SU🔻***",
 'parse_mode'=>"MarkDown",
